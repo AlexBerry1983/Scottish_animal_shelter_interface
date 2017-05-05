@@ -1,9 +1,9 @@
 require('pry-byebug')
  require_relative('../models/owner')
- require_relative('../models/pets')
+ require_relative('../models/animal')
 
  Owner.delete_all()
- Pet.delete_all()
+ Animal.delete_all()
 
  owner1 = Owner.new({
    'name' => 'Angus',
@@ -24,7 +24,7 @@ require('pry-byebug')
   owner2.save
   owner3.save 
 
- pet1 = Pet.new({
+ animal1 = Animal.new({
    'name' => 'Scrappy',
    'type' => 'Cat',
    'admission_date' => 'March 21 2016',
@@ -32,7 +32,7 @@ require('pry-byebug')
    'owner_id' => owner1.id
  })
 
- pet1 = Pet.new({
+ animal2 = Animal.new({
    'name' => 'Albert',
    'type' => 'Chicken',
    'admission_date' => 'May 2 2017',
@@ -40,7 +40,7 @@ require('pry-byebug')
    'owner_id' => nil
  })
 
- pet1 = Pet.new({
+ animal3 = Animal.new({
    'name' => 'Ruffles',
    'type' => 'Dog',
    'admission_date' => 'March 21 2013',
@@ -48,7 +48,7 @@ require('pry-byebug')
    'owner_id' => owner3.id
  })
  
- pet1.save
- pet2.save
- pet3.save
+ animal1.save
+ animal2.save
+ animal3.save
 
