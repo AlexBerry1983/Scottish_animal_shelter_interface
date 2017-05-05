@@ -27,10 +27,28 @@ require('pry-byebug')
  pet1 = Pet.new({
    'name' => 'Scrappy',
    'type' => 'Cat',
-   'admission_date' => 'March 21 2013',
+   'admission_date' => 'March 21 2016',
    'adoptable' => true,
    'owner_id' => owner1.id
  })
 
+ pet1 = Pet.new({
+   'name' => 'Albert',
+   'type' => 'Chicken',
+   'admission_date' => 'May 2 2017',
+   'adoptable' => false,
+   'owner_id' => nil
+ })
 
+ pet1 = Pet.new({
+   'name' => 'Ruffles',
+   'type' => 'Dog',
+   'admission_date' => 'March 21 2013',
+   'adoptable' => true,
+   'owner_id' => owner3.id
+ })
+ 
  pet1.save
+ pet2.save
+ pet3.save
+
