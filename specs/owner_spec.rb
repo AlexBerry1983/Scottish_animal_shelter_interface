@@ -13,5 +13,6 @@ class OwnerTest < Minitest::Test
     assert_equal("23 made up street", owner1.address)
   end
 
+  
 
 end
