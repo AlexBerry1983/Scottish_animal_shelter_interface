@@ -13,6 +13,7 @@ class AnimalTest < Minitest::Test
     })
     assert_equal('Scrappy', animal1.name)
     assert_equal('Cat', animal1.type)
+    assert_equal('March 21 2016', animal1.admission_date)
   end
 
 
