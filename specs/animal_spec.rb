@@ -12,6 +12,7 @@ class AnimalTest < Minitest::Test
       'adoptable' => true,
     })
     assert_equal('Scrappy', animal1.name)
+    assert_equal('Cat', animal1.type)
   end
 
 
