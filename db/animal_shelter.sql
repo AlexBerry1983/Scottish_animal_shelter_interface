@@ -7,7 +7,7 @@ CREATE TABLE owners (
   address VARCHAR(255)
 );
 
-CREATE TABLE pets (
+CREATE TABLE animals (
   id serial4 PRIMARY KEY,
   name VARCHAR(255),
   type VARCHAR(255),

@@ -11,7 +11,7 @@ class Owner
   def save
     sql = "INSERT INTO owners (name, address) VALUES ('#{@name}', '#{@address}') RETURNING id;"
     owner_hash = SqlRunner.run(sql).first
-    @id = owner_hash[:id].to_i
+    @id = owner_hash['id'].to_i
   end
 
 end

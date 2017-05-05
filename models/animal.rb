@@ -1,5 +1,5 @@
 require_relative('./owner')
-require_relative
+require_relative('../db/SqlRunner')
 
 class Animal
 

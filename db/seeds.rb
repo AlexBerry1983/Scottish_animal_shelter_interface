@@ -1,9 +1,9 @@
 require('pry-byebug')
- require_relative('../models/owner')
- require_relative('../models/animal')
+require_relative('../models/owner')
+require_relative('../models/animal')
 
- Owner.delete_all()
- Animal.delete_all()
+ # Owner.delete_all()
+ # Animal.delete_all()
 
  owner1 = Owner.new({
    'name' => 'Angus',
@@ -15,7 +15,7 @@ require('pry-byebug')
    'address' => '42 imagination drive'
  })
 
- owner1 = Owner.new({
+ owner3 = Owner.new({
    'name' => 'Leon',
    'address' => '31 cant be serious close'
  })
@@ -37,7 +37,8 @@ require('pry-byebug')
    'type' => 'Chicken',
    'admission_date' => 'May 2 2017',
    'adoptable' => false,
-   'owner_id' => nil
+   'owner_id' => owner2.id
+   
  })
 
  animal3 = Animal.new({
@@ -52,3 +53,5 @@ require('pry-byebug')
  animal2.save
  animal3.save
 
+binding.pry
+nil
