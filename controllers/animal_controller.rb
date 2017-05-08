@@ -7,3 +7,7 @@ get '/animals' do
   @animals = Animal.find_all
   erb(:"animals/index")
 end
+
+get '/animals/new' do
+  erb(:"animals/new")
+end

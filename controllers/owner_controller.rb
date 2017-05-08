@@ -7,3 +7,4 @@ get '/owners' do
   @owners = Owner.find_all
   erb(:"owners/index")
 end
+
