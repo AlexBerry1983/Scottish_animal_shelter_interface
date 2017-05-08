@@ -14,4 +14,11 @@ class Owner
     @id = owner_hash['id'].to_i
   end
 
+  def Owner.find_all
+    sql = "SELECT * FROM owners"
+    owner_hash_pg = SqlRunner.run(sql)
+    owner_array_rb = owner_hash_pg.map { |owner| Owner.new(owner) }
+    return owner_array_rb
+  end
+
 end
