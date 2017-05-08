@@ -21,6 +21,14 @@ class Owner
     return nil
   end
 
+  def update
+    sql = "UPDATE owners SET
+    name = '#{@name}',
+    address = '#{@address}'
+    WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+
   def Owner.find(id)
     sql = "SELECT * FROM owners where id = #{id}"
     owner_rb = SqlRunner.run(sql).first
