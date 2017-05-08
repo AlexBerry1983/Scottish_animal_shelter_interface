@@ -20,5 +20,10 @@ class Animal
     @id = animal_hash[:id].to_i
   end
 
-
+  def Animal.find_all
+    sql = "SELECT * FROM animals"
+    animal_array_pg = SqlRunner.run(sql)
+    animal_object_rb = animal_array_pg.map { |animal| Animal.new(animal) }
+    return animal_object_rb
+  end
 end
