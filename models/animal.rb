@@ -17,7 +17,13 @@ class Animal
   def save
     sql = "INSERT INTO animals (name, type, admission_date, adoptable, owner_id) VALUES ('#{@name}', '#{@type}', '#{@admission_date}', '#{@adoptable}', #{@owner_id}) RETURNING id;"
     animal_hash = SqlRunner.run(sql).first
-    @id = animal_hash[:id].to_i
+    @id = animal_hash['id'].to_i
+  end
+
+  def Animal.find(id)
+    sql = "SELECT * FROM animals WHERE id = #{id}"
+    animal = SqlRunner.run(sql).first
+    return Animal.new(animal)
   end
 
   def Animal.delete_all
