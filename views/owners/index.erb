@@ -1,1 +1,9 @@
-Owners
+<h1> All Owners</h1>
+
+<div>
+  <% @owners.each do |owner| %>
+  <p>Name: <%= owner.name%></p>
+  <p>Address: <%= owner.address%></p>
+  <hr>
+  <%end%>
+</div>
