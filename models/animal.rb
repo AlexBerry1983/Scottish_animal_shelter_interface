@@ -27,6 +27,12 @@ class Animal
     return nil
   end
 
+  def owner
+    sql = "SELECT * FROM owners WHERE id = #{@owner_id}"
+    owner_hash = SqlRunner.run(sql).first
+    return Owner.new(owner_hash).name
+  end
+
   def update
     sql = "UPDATE animals SET
     name = '#{@name}',
