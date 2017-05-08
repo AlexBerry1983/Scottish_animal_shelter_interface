@@ -14,6 +14,12 @@ class Owner
     @id = owner_hash['id'].to_i
   end
 
+  def Owner.delete_all
+    sql = "DELETE FROM owners"
+    SqlRunner.run(sql)
+    return nil
+  end
+
   def Owner.find_all
     sql = "SELECT * FROM owners"
     owner_hash_pg = SqlRunner.run(sql)
