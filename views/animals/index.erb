@@ -1,0 +1,14 @@
+<h1>All animals<h1>
+
+<div>
+<% @animals.each() do |animal| %>
+  <p>Animal's Name: <%= animal.name%></p>
+  <p>Type of Animal: <%= animal.type%></p>
+  <p>Date of Admission to shelter: <%= animal.admission_date%></p>
+  <p>The animal is adoptable (true/false): <%= animal.adoptable%></p>
+  
+  <hr>
+
+<% end %>
+</div>
+

@@ -1,10 +1,8 @@
-require('sinatra')
-require('sinatra/contrib/all')
-require('pry-byebug')
-require_relative('models/animal.rb')
-require_relative('models/owner.rb')
+require( 'sinatra' )
+require( 'sinatra/contrib/all' )
+require_relative('controllers/animal_controller')
+require_relative('controllers/owner_controller')
 
-get '/animals' do
-  @animals = Animals.find_all
-  erb(:index)
+get '/' do
+  erb( :index )
 end

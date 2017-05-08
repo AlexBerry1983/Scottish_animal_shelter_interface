@@ -2,8 +2,8 @@ require('pry-byebug')
 require_relative('../models/owner')
 require_relative('../models/animal')
 
- # Owner.delete_all()
- # Animal.delete_all()
+ Owner.delete_all()
+ Animal.delete_all()
 
  owner1 = Owner.new({
    'name' => 'Angus',
