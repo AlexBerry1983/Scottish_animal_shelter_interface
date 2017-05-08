@@ -8,8 +8,7 @@ require_relative('../models/animal')
  owner1 = Owner.new({
    'name' => 'Animal Shelter',
    'address' => 'Royal Mile'
-
-  })
+ })
 
  owner2 = Owner.new({
    'name' => 'Angus',

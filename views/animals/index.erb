@@ -1,4 +1,4 @@
-<h1>All animals</h1>
+<h1>All Animals</h1>
 
 <div>
 <% @animals.each() do |animal| %>
@@ -7,6 +7,7 @@
   <p>Date of Admission to shelter: <%= animal.admission_date%></p>
   <p>The animal is adoptable (true/false): <%= animal.adoptable%></p>
   <p>Owner's name: <%= animal.owner%></p>
+  <a href="/animals/<%= animal.id%>/edit">Update</a>
   <hr>
 </div>
 <% end %>
