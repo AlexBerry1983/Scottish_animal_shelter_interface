@@ -20,6 +20,12 @@ class Animal
     @id = animal_hash['id'].to_i
   end
 
+  def delete
+    sql = "DELETE FROM animals where id = #{id}"
+    SqlRunner.run(sql)
+    return nil
+  end
+
   def Animal.find(id)
     sql = "SELECT * FROM animals WHERE id = #{id}"
     animal = SqlRunner.run(sql).first
