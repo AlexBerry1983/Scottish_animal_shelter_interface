@@ -20,6 +20,12 @@ class Animal
     @id = animal_hash[:id].to_i
   end
 
+  def Animal.delete_all
+    sql = "DELETE FROM animals"
+    SqlRunner.run(sql)
+    return nil
+  end
+
   def Animal.find_all
     sql = "SELECT * FROM animals"
     animal_array_pg = SqlRunner.run(sql)
