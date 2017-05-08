@@ -1,6 +1,7 @@
 class Owner
 
-  attr_reader :id, :name, :address
+  attr_reader :id
+  attr_accessor :name, :address
 
   def initialize(params)
     @id = params['id'].to_i if params['id']

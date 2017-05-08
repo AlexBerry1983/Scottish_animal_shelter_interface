@@ -3,7 +3,8 @@ require_relative('../db/SqlRunner')
 
 class Animal
 
-  attr_reader :id, :name, :type, :admission_date, :adoptable, :owner_id
+  attr_reader :id
+  attr_accessor :name, :type, :admission_date, :adoptable, :owner_id
 
   def initialize(params)
     @id = params['id'].to_i if params['id']
@@ -24,6 +25,17 @@ class Animal
     sql = "DELETE FROM animals where id = #{id}"
     SqlRunner.run(sql)
     return nil
+  end
+
+  def update
+    sql = "UPDATE animals SET
+    name = '#{@name}',
+    type = '#{@type}',
+    admission_date = '#{@admission_date}',
+    adoptable = '#{@adoptable}',
+    owner_id = #{@owner_id} 
+    WHERE id = #{id}"
+    SqlRunner.run(sql)
   end
 
   def Animal.find(id)
