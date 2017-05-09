@@ -1,16 +1,25 @@
 
 
-<form action="" method="post">
+<form action="/animals/<%= @animal.id %>" method="post">
   <label for="POST-name">Name:</label>
-  <input id="POST-name" type="text" name="name">
+  <input id="POST-name" type="text" name="name" value="<%=@animal.name%>">
   
   <label for="type">Type of animal: </label>
-  <input id="type" type="text" name="type">
+  <input id="type" type="text" name="type" value="<%=@animal.type%>">
 
   <label for="admission_date">Admission of pet to shelter: </label>
-  <input id="admission_date" type="date" name="admission_date">
+  <input id="admission_date" type="date" name="admission_date" value="<%=@animal.admission_date%>">
 
   <label for="adoptable">The animal is available for adoption (t/f): </label>
-  <input id="adoptable" type="" name="">
+  <input id="adoptable" type="text" name="adoptable" value="<%=@animal.adoptable%>">
+
+  <label for="owner_id">The owner of the animal: </label>
+  <select id="owner_id" name="owner_id" value="<%=@animal.owner_id%>">
+        <%@animal.owner%>
+        <%@owners.each do |owner| %>
+          <option value="<%= owner.id %>"><%= owner.name%></option>
+        <%end%>     
+  </select>
+  
   <input type="submit" value="Save">
 </form>
