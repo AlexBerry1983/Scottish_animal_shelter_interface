@@ -11,6 +11,7 @@ get '/animals' do
 end
 
 get '/animals/new' do
+  @owners = Owner.find_all
   erb(:"animals/new")
 end
 
@@ -18,6 +19,12 @@ get '/animals/:id/edit' do
   @animal = Animal.find( params[:id] )
   @owners = Owner.find_all
   erb(:"animals/edit")
+end
+
+post '/animals' do
+  @animal = Animal.new(params)
+  @animal.save
+  redirect to '/animals'
 end
 
 post '/animals/:id' do

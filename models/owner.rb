@@ -21,13 +21,13 @@ class Owner
     return nil
   end
 
-  def animal_name
+  def animal
     sql = "SELECT * FROM animals WHERE owner_id = #{id}"
     animal_hash = SqlRunner.run(sql).first
     if animal_hash == nil
       return nil
     end
-    return Animal.new(animal_hash).name
+    return Animal.new(animal_hash)
   end
 
   def update

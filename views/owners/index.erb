@@ -4,7 +4,7 @@
   <% @owners.each do |owner| %>
   <p>Name: <%= owner.name%></p>
   <p>Address: <%= owner.address%></p>
-  <p>Pet's name: <%= owner.animal_name%>
+  <p>Pet's name: <%= owner.animal.name if owner.animal%>
   <hr>
 
   <%end%>
