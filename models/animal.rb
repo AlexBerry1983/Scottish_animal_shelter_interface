@@ -30,7 +30,10 @@ class Animal
   def owner
     sql = "SELECT * FROM owners WHERE id = #{@owner_id}"
     owner_hash = SqlRunner.run(sql).first
-    return Owner.new(owner_hash).name
+    if owner_hash == nil
+      return nil
+    end
+    return Owner.new(owner_hash)
   end
 
   def update

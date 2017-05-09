@@ -14,10 +14,10 @@
   <input id="adoptable" type="text" name="adoptable" value="<%=@animal.adoptable%>">
 
   <label for="owner_id">The owner of the animal: </label>
-  <select id="owner_id" name="owner_id" value="<%=@animal.owner_id%>">
-        <%@animal.owner%>
+  <select id="owner_id" name="owner_id">
+        
         <%@owners.each do |owner| %>
-          <option value="<%= owner.id %>"><%= owner.name%></option>
+        <option value="<%= owner.id %>" <%="selected" if owner.id == @animal.owner.id %>><%= owner.name%></option>
         <%end%>     
   </select>
   

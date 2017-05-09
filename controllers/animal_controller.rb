@@ -21,7 +21,6 @@ get '/animals/:id/edit' do
 end
 
 post '/animals/:id' do
-  # puts params
   Animal.new( params ).update
   redirect to '/animals'
 end

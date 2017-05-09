@@ -24,6 +24,9 @@ class Owner
   def animal_name
     sql = "SELECT * FROM animals WHERE owner_id = #{id}"
     animal_hash = SqlRunner.run(sql).first
+    if animal_hash == nil
+      return nil
+    end
     return Animal.new(animal_hash).name
   end
 
