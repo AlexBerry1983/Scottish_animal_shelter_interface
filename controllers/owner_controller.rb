@@ -12,8 +12,18 @@ get '/owners/new' do
   erb(:"owners/new")
 end
 
+get '/owners/:id/edit' do
+  @owner = Owner.find(params[:id])
+  erb(:"owners/edit")
+end
+
 post '/owners' do
   @owner = Owner.new(params)
   @owner.save
-  redirect('/owners')
+  redirect to '/owners'
 end
+
+post '/owners/:id' do
+  @owner = Owner.new(params).update
+  redirect('/owners')
+end 

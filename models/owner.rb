@@ -33,7 +33,7 @@ class Owner
   def update
     sql = "UPDATE owners SET
     name = '#{@name}',
-    address = '#{@address}'
+    address = '#{@address}' 
     WHERE id = #{id}"
     SqlRunner.run(sql)
   end
