@@ -21,6 +21,11 @@ get '/animals/:id/edit' do
   erb(:"animals/edit")
 end
 
+get '/animals/show' do
+  @animals = Animal.find_if_not_adoptable
+  erb(:"animals/show")
+end
+
 post '/animals' do
   @animal = Animal.new(params)
   @animal.save

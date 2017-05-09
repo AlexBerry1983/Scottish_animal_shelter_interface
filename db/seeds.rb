@@ -33,8 +33,8 @@ require_relative('../models/animal')
  animal1 = Animal.new({
    'name' => 'Scrappy',
    'type' => 'Cat',
-   'admission_date' => 'March 21 2016',
-   'adoptable' => false,
+   'admission_date' => 'March 21 2017',
+   'adoptable' => true,
    'owner_id' => owner2.id
  })
 
@@ -42,7 +42,7 @@ require_relative('../models/animal')
    'name' => 'Albert',
    'type' => 'Chicken',
    'admission_date' => 'May 2 2017',
-   'adoptable' => false,
+   'adoptable' => true,
    'owner_id' => owner3.id
    
  })
@@ -50,16 +50,40 @@ require_relative('../models/animal')
  animal3 = Animal.new({
    'name' => 'Ruffles',
    'type' => 'Dog',
-   'admission_date' => 'March 21 2013',
-   'adoptable' => false,
+   'admission_date' => 'March 21 2017',
+   'adoptable' => true,
    'owner_id' => owner4.id
  })
  
  animal4 = Animal.new({
-   'name' => 'Giggles',
+   'name' => 'Chuckles',
    'type' => 'Spider monkey',
    'admission_date' => 'April 2 2016',
    'adoptable' => true,
+   'owner_id' => owner1.id
+ })
+
+ animal5 = Animal.new({
+   'name' => 'Elisa',
+   'type' => 'Highland Cow',
+   'admission_date' => 'May 4 2016',
+   'adoptable' => false,
+   'owner_id' => owner1.id
+ })
+
+ animal6 = Animal.new({
+   'name' => 'Alan',
+   'type' => 'Cat',
+   'admission_date' => 'November 15 2016',
+   'adoptable' => false,
+   'owner_id' => owner1.id
+ })
+
+ animal7 = Animal.new({
+   'name' => 'Analise',
+   'type' => 'Polar Bear',
+   'admission_date' => 'December 9 2016',
+   'adoptable' => false,
    'owner_id' => owner1.id
  })
 
@@ -67,6 +91,9 @@ require_relative('../models/animal')
  animal2.save
  animal3.save
  animal4.save
+ animal5.save
+ animal6.save
+ animal7.save
 
 binding.pry
 nil

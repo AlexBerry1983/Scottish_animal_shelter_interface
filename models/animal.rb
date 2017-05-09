@@ -54,7 +54,12 @@ class Animal
     return animals_rb
   end
 
-  
+  def Animal.find_if_not_adoptable
+    sql = "SELECT * FROM animals WHERE adoptable = #{false}"
+    animals_pg = SqlRunner.run(sql)
+    animals_rb = animals_pg.map { |animal| Animal.new(animal) }
+    return animals_rb
+  end
 
   def Animal.find(id)
     sql = "SELECT * FROM animals WHERE id = #{id}"
@@ -69,7 +74,7 @@ class Animal
   end
 
   def Animal.find_all
-    sql = "SELECT * FROM animals"
+    sql = "SELECT * FROM animals WHERE adoptable = #{true}"
     animal_array_pg = SqlRunner.run(sql)
     animal_object_rb = animal_array_pg.map { |animal| Animal.new(animal) }
     return animal_object_rb
