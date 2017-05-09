@@ -47,6 +47,14 @@ class Animal
     SqlRunner.run(sql)
   end
 
+  def Animal.find_by_type(looked_for_type)
+    sql = "SELECT * FROM animals WHERE type = '#{looked_for_type}'"
+    animals_pg = SqlRunner.run(sql)
+    animals_rb = animals_pg.map { |animal| Animal.new(animal) }
+    return animals_rb
+  end
+
+  
 
   def Animal.find(id)
     sql = "SELECT * FROM animals WHERE id = #{id}"

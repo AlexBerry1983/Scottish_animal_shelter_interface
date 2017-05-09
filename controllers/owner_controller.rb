@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
 require_relative('../models/owner.rb')
+require_relative('../models/animal.rb')
 
 get '/owners' do
   @owners = Owner.find_all
@@ -27,3 +28,9 @@ post '/owners/:id' do
   @owner = Owner.new(params).update
   redirect('/owners')
 end 
+
+post '/owners/:id/delete' do
+  @owner = Owner.find(params[:id])
+  @owner.delete
+  redirect to '/owners'
+end
