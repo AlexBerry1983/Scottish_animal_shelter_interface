@@ -4,7 +4,7 @@ require('pry-byebug')
 require_relative('../models/animal.rb')
 require_relative('../models/owner.rb')
 
-# index
+
 get '/animals' do
   @animals = Animal.find_all
   erb(:"animals/index")
@@ -22,7 +22,7 @@ get '/animals/:id/edit' do
 end
 
 get '/animals/rehab' do
-  @animals = Animal.find_all_rehab
+  @animals = Animal.all_rehab
   erb(:"animals/rehab")
 end
 
