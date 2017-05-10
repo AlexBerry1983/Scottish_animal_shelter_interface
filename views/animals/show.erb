@@ -1,16 +1,13 @@
-This is where the animals are trained/ healed before adoption
 
-<div>
-<% @animals.each() do |animal| %>
-  <p>Animal's Name: <%= animal.name%></p>
-  <p>Type of Animal: <%= animal.type%></p>
-  <p>Date of Admission to shelter: <%= animal.admission_date%></p>
-  <p>The animal is adoptable (true/false): <%= animal.adoptable%></p>
-  <p>Owner's name: <%= animal.owner.name if animal.owner%></p>
-  <a href="/animals/<%= animal.id%>/edit">Update</a>
-  <form action="/animals/<%= animal.id%>/delete" method="POST">
+  <p>Animal's Name: <%= @animal.name%></p>
+  <p>Type of Animal: <%= @animal.type%></p>
+  <p>Date of Admission to shelter: <%= @animal.admission_date%></p>
+  <p>The animal is adoptable (true/false): <%= @animal.adoptable%></p>
+  <p>Owner's name: <%= @animal.owner.name if @animal.owner%></p>
+  <a href="/animals/<%= @animal.id%>/edit">Update</a>
+  
+
+  <form action="/animals/<%= @animal.id%>/delete" method="POST">
       <input type="submit" value="Delete Animal details">  
   </form>
   <hr>
-  <%end%>
-</div>
