@@ -80,7 +80,7 @@ require_relative('../models/animal')
  })
 
  animal7 = Animal.new({
-   'name' => 'Analise',
+   'name' => 'Dorothy',
    'type' => 'Polar Bear',
    'admission_date' => 'December 9 2016',
    'adoptable' => false,

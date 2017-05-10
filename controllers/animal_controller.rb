@@ -21,6 +21,11 @@ get '/animals/:id/edit' do
   erb(:"animals/edit")
 end
 
+get '/animals/adopt' do
+  @animals = Animal.all_adoptable
+  erb(:"animals/adopt")
+end
+
 get '/animals/rehab' do
   @animals = Animal.all_rehab
   erb(:"animals/rehab")

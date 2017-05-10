@@ -1,0 +1,11 @@
+<a href="/animals">Back to all animals</a>
+<br>
+These animals are good to go
+
+<div>
+<% @animals.each() do |animal| %>
+  <a href="/animals/<%=animal.id%>"><p>Animal's Name: <%= animal.name%></p></a>
+  <p>Type of Animal: <%= animal.type%></p>
+  <hr>
+<% end %>
+</div>
