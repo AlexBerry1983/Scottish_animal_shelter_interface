@@ -36,6 +36,11 @@ get '/animals/:id' do
   erb(:"animals/show")
 end
 
+post '/search' do
+  @animals = Animal.find_by_type(params[:search_type])
+  erb(:"animals/animal_type")
+end 
+
 post '/animals' do
   @animal = Animal.new(params)
   @animal.save

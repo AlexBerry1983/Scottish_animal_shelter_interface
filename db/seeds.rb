@@ -73,7 +73,7 @@ require_relative('../models/animal')
 
  animal6 = Animal.new({
    'name' => 'Alan',
-   'type' => 'Cat',
+   'type' => 'Salmon',
    'admission_date' => 'November 15 2016',
    'adoptable' => false,
    'owner_id' => owner1.id

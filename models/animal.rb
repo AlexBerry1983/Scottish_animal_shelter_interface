@@ -48,7 +48,7 @@ class Animal
   end
 
   def Animal.find_by_type(looked_for_type)
-    sql = "SELECT * FROM animals WHERE type = '#{looked_for_type}'"
+    sql = "SELECT * FROM animals WHERE lower(type) LIKE lower('%#{looked_for_type}%')"
     animals_pg = SqlRunner.run(sql)
     animals_rb = animals_pg.map { |animal| Animal.new(animal) }
     return animals_rb
