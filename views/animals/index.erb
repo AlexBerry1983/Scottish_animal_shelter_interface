@@ -1,4 +1,6 @@
-<h1>All Animals</h1>
+<h1>Animals</h1>
+<a href="/animals/show">Rehabilitation Centre</a>
+<a href="/animals/new">Add an Animal</a>
 
 <div>
 <% @animals.each() do |animal| %>
@@ -14,8 +16,9 @@
       <input type="submit" value="Delete Animal details">  
   </form>
   <hr>
+<% end %>
 </div>
   
-<% end %>
+
 
 
